@@ -35,16 +35,8 @@ protected:
 	virtual void SetupInputComponent() override;
 	// End PlayerController interface
 
-	/** Input handlers for SetDestination action. */
-	void OnSetDestinationPressed();
-	void OnSetDestinationReleased();
-	void OnTouchPressed(const ETouchIndex::Type FingerIndex, const FVector Location);
-	void OnTouchReleased(const ETouchIndex::Type FingerIndex, const FVector Location);
-
-private:
-	bool bInputPressed; // Input is bring pressed
-	bool bIsTouch; // Is it a touch device
-	float FollowTime; // For how long it has been pressed
+	void OnMoveForwardPressed(float Axis);
+	void OnMoveRightPressed(float Axis);
 };
 
 

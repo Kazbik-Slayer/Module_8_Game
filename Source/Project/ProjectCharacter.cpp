@@ -13,7 +13,6 @@
 
 AProjectCharacter::AProjectCharacter()
 {
-	// Set size for player capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
 	// Don't rotate character to camera direction
@@ -33,7 +32,7 @@ AProjectCharacter::AProjectCharacter()
 	CameraBoom->SetUsingAbsoluteRotation(true); // Don't want arm to rotate when character does
 	CameraBoom->TargetArmLength = 800.f;
 	CameraBoom->SetRelativeRotation(FRotator(-60.f, 0.f, 0.f));
-	CameraBoom->bDoCollisionTest = false; // Don't want to pull camera in when it collides with level
+	CameraBoom->bDoCollisionTest = true; // Don't want to pull camera in when it collides with level
 
 	// Create a camera...
 	TopDownCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("TopDownCamera"));
