@@ -54,8 +54,8 @@ void AGame_Test_by_Nia477PlayerController::SetupInputComponent()
 	// set up gameplay key bindings
 	Super::SetupInputComponent();
 
-	InputComponent->BindAction("SetDestination", IE_Pressed, this, &AGame_Test_by_Nia477PlayerController::OnSetDestinationPressed);
-	InputComponent->BindAction("SetDestination", IE_Released, this, &AGame_Test_by_Nia477PlayerController::OnSetDestinationReleased);
+	InputComponent->BindAction("LMB", IE_Pressed, this, &AGame_Test_by_Nia477PlayerController::OnSetDestinationPressed);
+	InputComponent->BindAction("LMB", IE_Released, this, &AGame_Test_by_Nia477PlayerController::OnSetDestinationReleased);
 
 	// support touch devices 
 	InputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AGame_Test_by_Nia477PlayerController::OnTouchPressed);
