@@ -14,6 +14,12 @@ AProjectPlayerController::AProjectPlayerController()
 	DefaultMouseCursor = EMouseCursor::Default;
 }
 
+void AProjectPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+	SetInputMode(FInputModeGameAndUI());
+}
+
 void AProjectPlayerController::PlayerTick(float DeltaTime)
 {
 	Super::PlayerTick(DeltaTime);

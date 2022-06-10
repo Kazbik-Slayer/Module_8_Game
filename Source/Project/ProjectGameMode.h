@@ -12,8 +12,22 @@ class AProjectGameMode : public AGameModeBase
 	GENERATED_BODY()
 
 public:
+	
 	AProjectGameMode();
+
+	UFUNCTION(BlueprintCallable, Category = "Project")
+		void ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass);
+
+protected:
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Project")
+		TSubclassOf<UUserWidget> StartingWidgetClass;
+
+	UPROPERTY()
+		UUserWidget* CurrentWidget;
+
+	UPROPERTY(EditAnyWhere, Category = "Class Types")
+		TSubclassOf<UUserWidget> MainMenuWidgetClass;
+
+	virtual void BeginPlay() override;
 };
-
-
-

@@ -18,6 +18,8 @@ class AProjectPlayerController : public APlayerController
 public:
 	AProjectPlayerController();
 
+	virtual void BeginPlay() override;
+
 	/** Time Threshold to know if it was a short press */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	float ShortPressThreshold;
