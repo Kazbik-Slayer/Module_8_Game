@@ -18,7 +18,6 @@ UStatsModel::UStatsModel() : Health(0.0), Mana(0.0), Agility(0.0), Strength(0.0)
 void UStatsModel::BeginPlay()
 {
 	Super::BeginPlay();
-
 	// ...
 	
 }
