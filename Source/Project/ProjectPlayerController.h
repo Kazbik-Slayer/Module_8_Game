@@ -18,13 +18,10 @@ class AProjectPlayerController : public APlayerController
 public:
 	AProjectPlayerController();
 
-	/** Time Threshold to know if it was a short press */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
-	float ShortPressThreshold;
+	virtual void BeginPlay() override;
 
-	/** FX Class that we will spawn when clicking */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
-	UNiagaraSystem* FXCursor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bDisableMoving;
 
 protected:
 	/** True if the controlled character should navigate to the mouse cursor. */
