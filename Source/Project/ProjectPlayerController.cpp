@@ -8,7 +8,7 @@
 #include "ProjectCharacter.h"
 #include "Engine/World.h"
 
-AProjectPlayerController::AProjectPlayerController()
+AProjectPlayerController::AProjectPlayerController() : bDisableMoving(false)
 {
 	bShowMouseCursor = true;
 	DefaultMouseCursor = EMouseCursor::Default;
@@ -36,10 +36,16 @@ void AProjectPlayerController::SetupInputComponent()
 
 void AProjectPlayerController::OnMoveForwardPressed(float Axis)
 {
-	GetPawn()->AddMovementInput(FRotationMatrix(GetControlRotation()).GetUnitAxis(EAxis::X), Axis);
+	if (!bDisableMoving) {
+		FRotationMatrix rotationM(GetControlRotation());
+		GetPawn()->AddMovementInput(rotationM.GetUnitAxis(EAxis::X), Axis);
+	}
 }
 
 void AProjectPlayerController::OnMoveRightPressed(float Axis)
 {
-	GetPawn()->AddMovementInput(FRotationMatrix(GetControlRotation()).GetUnitAxis(EAxis::Y), Axis);
+	if (!bDisableMoving) {
+		FRotationMatrix rotationM(GetControlRotation());
+		GetPawn()->AddMovementInput(rotationM.GetUnitAxis(EAxis::Y), Axis);
+	}
 }
