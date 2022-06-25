@@ -36,6 +36,7 @@ void AProjectPlayerController::SetupInputComponent()
 
 void AProjectPlayerController::OnMoveForwardPressed(float Axis)
 {
+	Cast<AProjectCharacter>(GetPawn());
 	if (!bDisableMoving) {
 		FRotationMatrix rotationM(GetControlRotation());
 		GetPawn()->AddMovementInput(rotationM.GetUnitAxis(EAxis::X), Axis);
